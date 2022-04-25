@@ -20,7 +20,7 @@ public class QuantidadeDownloadsAplicativo {
     @Column(nullable = false)
     private Integer quantidade;
 
-    @OneToOne
+    @OneToOne(optional = false)
     private Aplicativo aplicativo;
 
     @Version
