@@ -66,4 +66,8 @@ public class Aplicativo {
         return id;
     }
 
+    public String getLink() {
+        return link;
+    }
+
 }

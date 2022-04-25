@@ -1,5 +1,7 @@
 package br.com.zup.handora.zupedustore.aplicativo;
 
+import java.util.Map;
+
 import javax.transaction.Transactional;
 
 import org.springframework.http.HttpStatus;
@@ -24,7 +26,7 @@ public class AplicativoController {
 
     @Transactional
     @PatchMapping("/{aplicativoId}/downloads")
-    public ResponseEntity<Void> incrementarDownloads(@PathVariable Long aplicativoId) {
+    public ResponseEntity<Map<String, String>> incrementarDownloads(@PathVariable Long aplicativoId) {
         Aplicativo aplicativo = aplicativoRepository.findById(aplicativoId)
                                                     .orElseThrow(
                                                         () -> new ResponseStatusException(
@@ -35,7 +37,7 @@ public class AplicativoController {
 
         aplicativo.incrementarDownloads();
 
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(Map.of("link", aplicativo.getLink()));
     }
 
     @Transactional
