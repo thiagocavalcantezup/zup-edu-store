@@ -46,9 +46,7 @@ public class Aplicativo {
     @Deprecated
     public Aplicativo() {}
 
-    public Aplicativo(String nome, String descricao, String link,
-                      QuantidadeDownloadsAplicativo quantidadeDownloads,
-                      QuantidadeLikesAplicativo quantidadeLikes) {
+    public Aplicativo(String nome, String descricao, String link) {
         this.nome = nome;
         this.descricao = descricao;
         this.link = link;
